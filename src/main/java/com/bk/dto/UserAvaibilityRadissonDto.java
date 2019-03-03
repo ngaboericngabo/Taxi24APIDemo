@@ -5,36 +5,19 @@ import java.sql.Timestamp;
 import com.bk.domain.Users;
 
 public class UserAvaibilityRadissonDto {
-	 private long availableDriverId;
-	 private long latitude;
-	 private long longitude;
-	 private Users users;
+
+	 private double latitude;
+	 private double longitude;
+	 private UserRadissonDto userRadissonDto;
 	 private Timestamp availableDateTime;
 	 private String status;
-	public long getAvailableDriverId() {
-		return availableDriverId;
-	}
-	public void setAvailableDriverId(long availableDriverId) {
-		this.availableDriverId = availableDriverId;
-	}
-	public long getLatitude() {
-		return latitude;
-	}
-	public void setLatitude(long latitude) {
-		this.latitude = latitude;
-	}
-	public long getLongitude() {
-		return longitude;
-	}
+	 private double distance;
+	
+
 	public void setLongitude(long longitude) {
 		this.longitude = longitude;
 	}
-	public Users getUsers() {
-		return users;
-	}
-	public void setUsers(Users users) {
-		this.users = users;
-	}
+
 	public Timestamp getAvailableDateTime() {
 		return availableDateTime;
 	}
@@ -46,6 +29,32 @@ public class UserAvaibilityRadissonDto {
 	}
 	public void setStatus(String status) {
 		this.status = status;
+	}
+	public UserRadissonDto getUserRadissonDto() {
+		return userRadissonDto;
+	}
+	public void setUserRadissonDto(UserRadissonDto userRadissonDto) {
+		this.userRadissonDto = userRadissonDto;
+	}
+	public double getLatitude() {
+		return latitude;
+	}
+	public void setLatitude(double latitude) {
+		this.latitude = latitude;
+	}
+	public double getLongitude() {
+		return longitude;
+	}
+	public void setLongitude(double longitude) {
+		this.longitude = longitude;
+	}
+
+	public double getDistance() {
+		return distance;
+	}
+
+	public void setDistance(double distance) {
+		this.distance = distance;
 	}
 	 
 	 

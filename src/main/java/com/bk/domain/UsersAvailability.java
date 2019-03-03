@@ -1,16 +1,33 @@
 package com.bk.domain;
 import java.io.Serializable;
-import java.sql.Timestamp;
-public class UsersAvailability extends GenericDomain implements Serializable {
-	  private static final long serialVersionUID = 1L;
 
+import java.sql.Timestamp;
+
+import javax.persistence.Entity;
+import javax.persistence.EntityListeners;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+@Entity
+@Table(name="UsersAvailability")
+@EntityListeners(AuditingEntityListener.class)
+public class UsersAvailability implements Serializable {
+	  private static final long serialVersionUID = 1L;
+	  @Id
+	  @GeneratedValue(strategy = GenerationType.IDENTITY)
 	 private long availableDriverId;
-	 private long latitude;
-	 private long longitude;
-	 private Users users;
+	 private double latitude;
+	 private double longitude;
 	 private Timestamp availableDateTime;
 	 private String status;
-	 
+	 @ManyToOne
+	 @JoinColumn(name = "userId")
+	 private Users users;
 	 
 	public long getAvailableDriverId() {
 		return availableDriverId;
@@ -18,15 +35,7 @@ public class UsersAvailability extends GenericDomain implements Serializable {
 	public void setAvailableDriverId(long availableDriverId) {
 		this.availableDriverId = availableDriverId;
 	}
-	public long getLatitude() {
-		return latitude;
-	}
-	public void setLatitude(long latitude) {
-		this.latitude = latitude;
-	}
-	public long getLongitude() {
-		return longitude;
-	}
+
 	public void setLongitude(long longitude) {
 		this.longitude = longitude;
 	}
@@ -49,9 +58,22 @@ public class UsersAvailability extends GenericDomain implements Serializable {
 	public void setUsers(Users users) {
 		this.users = users;
 	}
+	public double getLatitude() {
+		return latitude;
+	}
+	public void setLatitude(double latitude) {
+		this.latitude = latitude;
+	}
+	public double getLongitude() {
+		return longitude;
+	}
+	public void setLongitude(double longitude) {
+		this.longitude = longitude;
+	}
 	
 	
 	 
+	
 	 
 	 
 	 

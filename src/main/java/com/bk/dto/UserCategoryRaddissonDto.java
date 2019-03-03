@@ -3,16 +3,11 @@ package com.bk.dto;
 
 
 public class UserCategoryRaddissonDto {
-	 private long userCategoryId;
+	
 	 private String userCategoryCode;
 	 private String userCategoryName;
 	 private String userCategoryDescription;
-	public long getUserCategoryId() {
-		return userCategoryId;
-	}
-	public void setUserCategoryId(long userCategoryId) {
-		this.userCategoryId = userCategoryId;
-	}
+
 	public String getUserCategoryCode() {
 		return userCategoryCode;
 	}

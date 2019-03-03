@@ -1,14 +1,34 @@
 package com.bk.domain;
 
 import java.io.Serializable;
+import java.sql.Timestamp;
 
-public class Invoice   extends GenericDomain implements Serializable {
+import javax.persistence.Entity;
+import javax.persistence.EntityListeners;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+@Entity
+@Table(name="Invoice")
+@EntityListeners(AuditingEntityListener.class)
+public class Invoice  implements Serializable {
 	private static final long serialVersionUID = 1L;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)	
 	private long invoiceId;
 	private long amount;
 	private String  billNumber;
 	private  String invoiceStatus;
-	private Trip trip;
+	private Timestamp createdDate;
+	 @ManyToOne
+	 @JoinColumn(name = "tripId")
+	 private Trip trip;
+	 
 	
 	public long getInvoiceId() {
 		return invoiceId;
@@ -39,6 +59,12 @@ public class Invoice   extends GenericDomain implements Serializable {
 	}
 	public void setTrip(Trip trip) {
 		this.trip = trip;
+	}
+	public Timestamp getCreatedDate() {
+		return createdDate;
+	}
+	public void setCreatedDate(Timestamp createdDate) {
+		this.createdDate = createdDate;
 	}
 	
 	

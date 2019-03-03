@@ -7,42 +7,23 @@ import com.bk.domain.Users;
 public class TripRadissonDto {
 	
 	private long TripId;
-	private long statLongitude;
-	private long statLatutide;
-	private long finishLongitude;
-	private long finishLatutide;
+	private double statLongitude;
+	private double statLatutide;
+	private double finishLongitude;
+	private double finishLatutide;
 	private Timestamp statTimeDate;
 	private Timestamp finishTimeDate;
 	private Users driver;
 	private Users rider;
 	private String tripStatusCode;
 	private long price;
+	private Timestamp createdTime;
+	
 	public long getTripId() {
 		return TripId;
 	}
 	public void setTripId(long tripId) {
 		TripId = tripId;
-	}
-	public long getStatLongitude() {
-		return statLongitude;
-	}
-	public void setStatLongitude(long statLongitude) {
-		this.statLongitude = statLongitude;
-	}
-	public long getStatLatutide() {
-		return statLatutide;
-	}
-	public void setStatLatutide(long statLatutide) {
-		this.statLatutide = statLatutide;
-	}
-	public long getFinishLongitude() {
-		return finishLongitude;
-	}
-	public void setFinishLongitude(long finishLongitude) {
-		this.finishLongitude = finishLongitude;
-	}
-	public long getFinishLatutide() {
-		return finishLatutide;
 	}
 	public void setFinishLatutide(long finishLatutide) {
 		this.finishLatutide = finishLatutide;
@@ -83,6 +64,38 @@ public class TripRadissonDto {
 	public void setPrice(long price) {
 		this.price = price;
 	}
+	public double getStatLongitude() {
+		return statLongitude;
+	}
+	public void setStatLongitude(double statLongitude) {
+		this.statLongitude = statLongitude;
+	}
+	public double getStatLatutide() {
+		return statLatutide;
+	}
+	public void setStatLatutide(double statLatutide) {
+		this.statLatutide = statLatutide;
+	}
+	public double getFinishLongitude() {
+		return finishLongitude;
+	}
+	public void setFinishLongitude(double finishLongitude) {
+		this.finishLongitude = finishLongitude;
+	}
+	public double getFinishLatutide() {
+		return finishLatutide;
+	}
+	public void setFinishLatutide(double finishLatutide) {
+		this.finishLatutide = finishLatutide;
+	}
+	public Timestamp getCreatedTime() {
+		return createdTime;
+	}
+	public void setCreatedTime(Timestamp createdTime) {
+		this.createdTime = createdTime;
+	}
+	
+	
 	
 	
 }
