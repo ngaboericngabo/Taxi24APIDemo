@@ -1,15 +1,18 @@
 # Taxi24APIDemo
 Bk Demo
 --------------Github repo-------------
+
 https://github.com/ngaboericngabo/Taxi24APIDemo.git
 
 -----Tools and Technologies used-------------
+
 Spring 2.0.4.RELEASE
 MySQL 5.5.11
 Java 8
 Eclipse
 Tomcat 8
 Maven 3
+
 -------------Deployment steps-------------
 
 1.create database ,name: "taxiapi"(username:root,passwor:root,port:3306)
