@@ -353,6 +353,7 @@ public class GenerateTaxi24ServiceImpl implements IGenerateTaxi24Constant {
 		List<UserAvaibilityRadissonDto> userAvaibilityRadissonDtoList = new ArrayList<UserAvaibilityRadissonDto>();
 		UsersAvailability usersDrive = new UsersAvailability();
 		usersDrive = getDriverAvailaableByIdOnly(driver);
+		int count=0;
 		if (usersDrive != null) {
 			for (UsersAvailability temp : availability.findAll()) {
 				UserAvaibilityRadissonDto userAvaibilityRadissonDto = new UserAvaibilityRadissonDto();
@@ -379,6 +380,9 @@ public class GenerateTaxi24ServiceImpl implements IGenerateTaxi24Constant {
 						userAvaibilityRadissonDto.setStatus(temp.getStatus());
 						userAvaibilityRadissonDto.setUserRadissonDto(userRadissonDto);
 						userAvaibilityRadissonDtoList.add(userAvaibilityRadissonDto);
+						count++;
+							if(count==3)
+								return userAvaibilityRadissonDtoList;
 					}
 				}
 			}
