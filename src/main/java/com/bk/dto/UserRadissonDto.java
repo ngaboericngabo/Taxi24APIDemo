@@ -1,6 +1,9 @@
 package com.bk.dto;
 
-
+/**
+ * @author Eric
+ *
+ */
 public class UserRadissonDto {
 	  private long userId;
 	  private String fname;
@@ -45,6 +48,8 @@ public class UserRadissonDto {
 	public void setUserCat(UserCategoryRaddissonDto userCat) {
 		this.userCat = userCat;
 	}
+	
 
-	  
+	
+	
 }

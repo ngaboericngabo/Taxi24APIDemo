@@ -1,14 +1,27 @@
-package com.bk.dto;
-
+package com.bk.model;
+import java.io.Serializable;
 import java.sql.Timestamp;
-import com.bk.model.Users;
+import javax.persistence.Entity;
+import javax.persistence.EntityListeners;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 /**
  * @author Eric
  *
  */
-public class TripRadissonDto {
-
+@Entity
+@Table(name = "Trip")
+@EntityListeners(AuditingEntityListener.class)
+public class Trip implements Serializable {
+	private static final long serialVersionUID = 1L;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long TripId;
 	private double statLongitude;
 	private double statLatutide;
@@ -16,11 +29,16 @@ public class TripRadissonDto {
 	private double finishLatutide;
 	private Timestamp statTimeDate;
 	private Timestamp finishTimeDate;
-	private Users driver;
-	private Users rider;
-	private String tripStatusCode;
-	private long price;
 	private Timestamp createdTime;
+	private String tripStatusCode;
+	private String comment;
+	private long price;
+	@ManyToOne
+	@JoinColumn(name = "driverId")
+	private Users driver;
+	@ManyToOne
+	@JoinColumn(name = "rederId")
+	private Users rider;
 
 	public long getTripId() {
 		return TripId;
@@ -74,6 +92,14 @@ public class TripRadissonDto {
 		this.tripStatusCode = tripStatusCode;
 	}
 
+	public String getComment() {
+		return comment;
+	}
+
+	public void setComment(String comment) {
+		this.comment = comment;
+	}
+
 	public long getPrice() {
 		return price;
 	}
@@ -121,6 +147,5 @@ public class TripRadissonDto {
 	public void setCreatedTime(Timestamp createdTime) {
 		this.createdTime = createdTime;
 	}
-	
 
 }
