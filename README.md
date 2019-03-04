@@ -27,6 +27,7 @@ path:\Taxi24APIDemo\src\main\resources
 5.restart the server
 
 ---------------Test------------------------
+
 1.you can use any tool to test web services
 ex:Mozilla Rest client plugin,.....
 
