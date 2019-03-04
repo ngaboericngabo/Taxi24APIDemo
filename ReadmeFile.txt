@@ -75,7 +75,7 @@ scenario:Get a specific rider by ID
 METHOD:GET
 http://localhost:8080/Taxi24BkAPI/getTaxi24/getRidersById/19
 
-scenario:For a specific driver, get a list of the 3 closest drivers(This will base on how may km provide it the request)
+scenario:For a specific driver, get a list of the 3 closest drivers(This will based on how may km provided in the request)
 METHOD:GET
 http://localhost:8080/Taxi24BkAPI/getTaxi24/get3closeClosestDriver/20/6
 
