@@ -11,8 +11,8 @@ Maven 3
 -------------Deployment steps-------------
 
 1.create database ,name: "taxiapi"(username:root,passwor:root,port:3306)
-2.import mysql file into mysql database(this can be foung onthe shared git hub repo)
-3.deploy war file on tomacat server(this can be foung onthe shared git hub repo)
+2.import mysql file into mysql database(this can be found ont he shared git hub repo)
+3.deploy war file on tomacat server(this can be found on the shared git hub repo)
 4.start tomacat server
 
 if database connection denied follow the bellow steps:
